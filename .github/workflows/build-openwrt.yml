@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt
+name: dw33d OpenWrt
 
 on:
   repository_dispatch:
@@ -126,7 +126,7 @@ jobs:
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
-        mv openwrt/dl ./
+        mv -rf openwrt/dl ./
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
 
